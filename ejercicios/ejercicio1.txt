@@ -1,0 +1,11 @@
++ Crear proyecto maven (arquetipo maven-archetype-webapp)
++ meter todas las dependencias de mi proyecto SpringMVC0
++ Configurar web.xml -> Crear servlet DispatcherServlet
++ Fichero de configuracion del servlet
++ Fichero de configuracion del contexto de Spring
+
+Un controlador con un método que de respuesta a la peticion /calcula --> Html Calculando
+
+Metodo recibe tres parametros 2 numeros y operacion (suma, resta)
+
+ServicioCalculadora tiene la funcion operar recibe tres parametros 2 numeros y operacion (suma, resta) y devuelve el resultado
