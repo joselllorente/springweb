@@ -49,7 +49,8 @@ public class MainController {
 
 	// Para pasar parametros y recogerlos (request, response y sesion)
 	@RequestMapping("/get2") // Responde a una peticion get
-	public ModelAndView printHelloGet(ModelMap model, HttpServletRequest req, HttpServletResponse resp,
+	public ModelAndView printHelloGet(ModelMap model, HttpServletRequest req, 
+			HttpServletResponse resp,
 			HttpSession ses) {
 		System.out.println("Session:" + ses.getId());
 		String parametro = req.getParameter("parameter");
@@ -60,8 +61,22 @@ public class MainController {
 										// mostrar. ME Abstraigo de la tecnologia que hay por debajo
 	}
 
-	@RequestMapping(value = "/test", method = RequestMethod.GET)
+	@RequestMapping(value = "/listUsuarios", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
+
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+
+		String formattedDate = dateFormat.format(date);
+
+		model.addAttribute("serverTime", formattedDate);
+
+		return "home";
+	}
+	
+	
+	@RequestMapping(value = "/listUsuarios", method = RequestMethod.POST)
+	public String home2(Locale locale, Model model) {
 
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);

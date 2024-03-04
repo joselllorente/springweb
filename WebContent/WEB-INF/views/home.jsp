@@ -10,7 +10,7 @@
         <h1>¡Hola Mundo!</h1>
  
         <div>
-            <p>Autor: ${author}</p>
+            <p>Autor: ${serverTime}</p>
         </div>
  
     </body>
