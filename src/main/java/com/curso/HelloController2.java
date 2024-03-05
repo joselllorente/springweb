@@ -12,13 +12,16 @@ public class HelloController2 {
 
 	
 //De la ruta que mandes lo que llegue antes del do me lo mandas como parametro
-	@RequestMapping("/{action}.do")
-	public String printHelloGet(ModelMap model, @PathVariable("action") String accion, @RequestParam("parameter") String param) {
+	@RequestMapping("/{pepito}.do")
+	public String printHelloGet(ModelMap model, 
+			@PathVariable("pepito") String accion, 
+			@RequestParam("numero") String param) {
+		
 		System.out.println("printHelloGet entra");
 		if (accion.toUpperCase().equals("GET")){
 			model.addAttribute("message","Action get called with parameter "+param);
 		}else{
-			model.addAttribute("message","Action post called with parameter "+param);
+			model.addAttribute("message","Action other called with parameter "+param);
 		}
 		return "Hola";//Separado de la vista, se manda el valor pero no se sabe donde se va a mostrar. ME Abstraigo de la tecnologia que hay por debajo
 	}
